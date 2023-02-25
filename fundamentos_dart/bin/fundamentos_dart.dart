@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:fundamentos_dart/classes/Produto.dart';
 import 'package:fundamentos_dart/fundamentos_dart.dart' as fundamentos_dart;
 
+double mediaAprovacao = 7.0;
+
 void main(List<String> arguments) {
   int? idade;
   String? nome;
@@ -35,4 +37,14 @@ void main(List<String> arguments) {
   $nome
   $sobrenome
   ''');
+
+  print("Aluno aprovado: " + verificarAprovacao(5, 8.5, 3.6).toString());
+}
+
+/**
+ * Função para verificação de média trimestral
+ */
+bool verificarAprovacao(double nota1, double nota2, double nota3) {
+  double media = (nota1 + nota2 + nota3) / 3;
+  return media < mediaAprovacao ? false :  true;
 }
