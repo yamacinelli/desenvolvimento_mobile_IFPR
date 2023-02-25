@@ -41,3 +41,14 @@ double exercicio1ComRetornoComParametro(double valorSalario, double valorDescont
   }
   return total;
 }
+
+void exercicio2() {
+  /*
+  Ao escrever uma função é possível variar as seguintes caracteristicas: retorno e paramêtros; no qual é possível ter funções sem retorno e sem paramêtro, sem retorno com paramêtro,
+  com retorno e sem paramêtro, com retorno e com paramêtro.
+  Quando utilizar cada uma vai partir da aplicação e da escolha do desenvolvedor, caso seja necessário o uso de algum valor que será obtido dentro da função será necessário retorno,
+  porém caso seja apenas necessário mostrar o valor (print) o retorno se faz desnecessário.
+  Algo parecido ocorre com os paramêtros da função, o uso de paramêtros é necessário quando a função precisa de valores especificos para sua funcionalidade.
+  Caso sejam obtidos valores dentro da função e esses sejam usados na funcionalidade não se faz necessário o uso.
+   */
+}
