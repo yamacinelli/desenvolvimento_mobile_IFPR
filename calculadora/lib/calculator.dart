@@ -23,18 +23,18 @@ class CalculatorState extends State<Calculator> {
         flex: 1,
         child: Container(
           color: Colors.black,
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: AutoSizeText('memory.result',
+                  padding: const EdgeInsets.all(8.0),
+                  child: AutoSizeText(memory.result,
                       minFontSize: 20.0,
                       maxFontSize: 80.0,
                       maxLines: 1,
                       textAlign: TextAlign.end,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.w200,
                           decoration: TextDecoration.none,
                           fontSize: 80.0,
