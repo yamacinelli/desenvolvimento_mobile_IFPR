@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Calculator extends StatefulWidget {
+  @override
   CalculatorState createState() => CalculatorState();
 }
 
@@ -22,12 +23,12 @@ class CalculatorState extends State<Calculator> {
         flex: 1,
         child: Container(
           color: Colors.black,
-          child: Column(
+          child: const Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: AutoSizeText('memory.result',
                       minFontSize: 20.0,
                       maxFontSize: 80.0,
@@ -48,25 +49,50 @@ class CalculatorState extends State<Calculator> {
       Color textColor = Colors.white,
       Color backgroundColor = Colors.white12}) {
     return Expanded(
+        flex: flex,
+        child: Container(
+          margin: const EdgeInsets.only(bottom: 10.0),
+          child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  foregroundColor: textColor,
+                  backgroundColor: backgroundColor,
+                  shape: const CircleBorder()),
+              child: Text(label, style: const TextStyle(fontSize: 30)),
+              onPressed: () {
+                setState(() {
+                  memory.applyCommand(label);
+                });
+              }),
+        ));
+  }
+
+  Widget buildKeyboardButtonZero(String label,
+      {int flex = 2,
+        Color textColor = Colors.white,
+        Color backgroundColor = Colors.white12}) {
+    return Expanded(
       flex: flex,
-      child: ElevatedButton(
+      child: Container(
+        margin: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+        child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              foregroundColor: textColor,
-              backgroundColor: backgroundColor,
-              shape: CircleBorder()),
-          child: Text(label, style: TextStyle(fontSize: 24)),
+                  foregroundColor: textColor,
+                  backgroundColor: backgroundColor,
+                  shape: const StadiumBorder()),
+              child: Text(label, style: const TextStyle(fontSize: 30)),
           onPressed: () {
             setState(() {
               memory.applyCommand(label);
             });
           }),
+      )
     );
   }
 
   Widget buildKeyboard() {
     return Container(
         color: Colors.black,
-        height: 400.0,
+        height: 450.0,
         child: Column(children: <Widget>[
           Expanded(
               flex: 1,
@@ -114,7 +140,7 @@ class CalculatorState extends State<Calculator> {
               child: Row(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    buildKeyboardButton('0', flex: 2),
+                    buildKeyboardButtonZero('0'),
                     buildKeyboardButton('.'),
                     buildKeyboardButton('=', backgroundColor: Colors.teal),
                   ]))
