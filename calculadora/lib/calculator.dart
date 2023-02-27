@@ -131,7 +131,7 @@ class CalculatorState extends State<Calculator> {
                   buildKeyboardButtonIcon(CupertinoIcons.percent, '%',
                       textColor: Colors.black38,
                       backgroundColor: const Color(0xffFFE0CA)),
-                  buildKeyboardButtonIcon(CupertinoIcons.divide, '÷',
+                  buildKeyboardButtonIcon(CupertinoIcons.divide, '/',
                       backgroundColor: const Color(0xffFFA15F)),
                 ],
               )),
