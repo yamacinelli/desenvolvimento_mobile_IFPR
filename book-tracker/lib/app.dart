@@ -1,3 +1,4 @@
+import 'package:aula/widget/favorite.dart';
 import 'package:aula/widget/home.dart';
 import 'package:aula/widget/introduction.dart';
 import 'package:aula/widget/login.dart';
@@ -14,7 +15,13 @@ class App extends StatelessWidget {
         '/': (context) => Introduction(),
         'login': (context) => Login(),
         'home': (context) => Home(),
+        'favorite': (context) => Favorite(),
       },
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: const Color(0xff605E9C),
+        scaffoldBackgroundColor: const Color(0xff152351),
+      ),
     );
   }
 }

@@ -11,11 +11,14 @@ class Login extends StatelessWidget {
         title: const Text("Login"),
       ),
       body: Container(
+          child: Center(
         child: ElevatedButton(
           onPressed: () => Navigator.pushNamed(context, Constants.ROUTE_HOME),
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Theme.of(context).primaryColor),
           child: const Text('Login'),
         ),
-      ),
+      )),
     );
   }
 }
