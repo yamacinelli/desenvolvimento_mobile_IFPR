@@ -147,10 +147,11 @@ class LoginState extends State<LoginStateful> {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blueAccent,
+                      fixedSize: const Size.fromWidth(100),
                     ),
                     child: const Text(
-                      'Começar',
-                      style: TextStyle(color: Colors.black, fontSize: 13),
+                      'Criar',
+                      style: TextStyle(color: Colors.white, fontSize: 13),
                     ),
                   ),
                 ],
