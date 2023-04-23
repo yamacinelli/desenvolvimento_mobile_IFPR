@@ -1,3 +1,4 @@
+import 'package:aula/widget/appBar.dart';
 import 'package:flutter/material.dart';
 
 class Setting extends StatelessWidget {
@@ -6,9 +7,7 @@ class Setting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Settings'),
-      ),
+      appBar: appBarBookTracker('Settings', context)
     );
   }
 }

@@ -54,7 +54,7 @@ class BottomNavigationBarBookTracker extends StatelessWidget {
                 label: 'Buy',
                 backgroundColor: Colors.black38),
           ],
-          backgroundColor: Theme.of(context).primaryColor.withOpacity(0.2),
+          backgroundColor: Colors.transparent,
           // Remove shadow from BottomNavigationBar
           elevation: 0.0,
         ),
