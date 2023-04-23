@@ -34,6 +34,7 @@ class App extends StatelessWidget {
         primaryColor: const Color(0xff605E9C),
         scaffoldBackgroundColor: const Color(0xff152351),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

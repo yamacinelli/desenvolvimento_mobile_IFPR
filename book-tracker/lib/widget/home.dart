@@ -1,9 +1,15 @@
+import 'package:aula/widget/appBar.dart';
 import 'package:aula/widget/bottomNavigationBarState.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
-  BotttomNavigationBarState createState() => BotttomNavigationBarState();
+  Widget build (BuildContext context) {
+    return Scaffold(
+      appBar: appBarBookTracker('Home', context),
+      bottomNavigationBar: BottomNavigationBarBookTracker(),
+    );
+  }
 }
