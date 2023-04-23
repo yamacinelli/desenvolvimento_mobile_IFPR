@@ -16,7 +16,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "App",
+      title: "BookWing",
       routes: {
         '/': (context) => Introduction(),
         'login': (context) => Login(),
