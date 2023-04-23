@@ -8,7 +8,7 @@ class Discover extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appBarBookTracker('Discover', context)
+        appBar: appBarBookTracker(true, 'Descobrir', context)
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:aula/constant/constants.dart';
+import 'package:aula/widget/appBar.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -7,18 +8,17 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Login"),
-      ),
+      appBar: appBarBookTracker(false, 'Login', context),
       body: Container(
-          child: Center(
-        child: ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, Constants.ROUTE_HOME),
-          style: ElevatedButton.styleFrom(
-              backgroundColor: Theme.of(context).primaryColor),
-          child: const Text('Login'),
+        child: Center(
+          child: ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, Constants.ROUTE_HOME),
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).primaryColor),
+            child: const Text('Login'),
+          ),
         ),
-      )),
+      ),
     );
   }
 }

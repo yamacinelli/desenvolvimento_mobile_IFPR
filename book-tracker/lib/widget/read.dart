@@ -8,7 +8,7 @@ class Read extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appBarBookTracker('Reading', context)
+        appBar: appBarBookTracker(true, 'Leituras', context)
     );
   }
 }

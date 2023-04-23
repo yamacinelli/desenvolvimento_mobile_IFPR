@@ -8,7 +8,7 @@ class Account extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appBarBookTracker('Account', context)
+        appBar: appBarBookTracker(true, 'Account', context)
     );
   }
 }

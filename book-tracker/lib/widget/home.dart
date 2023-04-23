@@ -8,7 +8,7 @@ class Home extends StatelessWidget {
   @override
   Widget build (BuildContext context) {
     return Scaffold(
-      appBar: appBarBookTracker('Home', context),
+      appBar: appBarBookTracker(true, 'Inicio', context),
       bottomNavigationBar: BottomNavigationBarBookTracker(),
     );
   }

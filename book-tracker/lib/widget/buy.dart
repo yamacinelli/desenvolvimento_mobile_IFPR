@@ -8,7 +8,7 @@ class Buy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appBarBookTracker('Buy', context)
+        appBar: appBarBookTracker(true, 'Comprar', context)
     );
   }
 }

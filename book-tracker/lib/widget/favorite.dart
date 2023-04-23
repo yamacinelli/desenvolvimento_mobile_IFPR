@@ -8,7 +8,7 @@ class Favorite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appBarBookTracker('Favorites', context)
+        appBar: appBarBookTracker(true, 'Favoritos', context)
     );
   }
 }

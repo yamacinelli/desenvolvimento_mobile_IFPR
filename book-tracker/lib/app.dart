@@ -32,7 +32,11 @@ class App extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: const Color(0xff605E9C),
-        scaffoldBackgroundColor: const Color(0xff152351),
+        scaffoldBackgroundColor: Colors.indigo,
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xffffb914),
+        ),
+        fontFamily: 'Poltawski Nowy',
       ),
       debugShowCheckedModeBanner: false,
     );
