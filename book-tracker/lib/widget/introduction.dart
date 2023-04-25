@@ -18,7 +18,7 @@ class Introduction extends StatelessWidget {
       child: ClipRRect(
         borderRadius: const BorderRadius.only(topLeft: Radius.circular(150)),
         child: Container(
-          color: Colors.blueAccent,
+          color: Theme.of(context).colorScheme.secondary,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -28,7 +28,7 @@ class Introduction extends StatelessWidget {
                 child: Text(
                   'Apresentando nosso novo aplicativo, projetado para ajudá-lo a rastrear e gerenciar facilmente seu progresso de leitura.',
                   textAlign: TextAlign.end,
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(fontSize: 13, color: Colors.white70),
                 ),
               ),
               const Padding(
@@ -36,7 +36,10 @@ class Introduction extends StatelessWidget {
                 child: Text(
                   'Nunca mais perca o controle de seus livros!',
                   textAlign: TextAlign.end,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
@@ -46,7 +49,10 @@ class Introduction extends StatelessWidget {
                   children: [
                     const Column(
                       children: [
-                        Text('Começar agora'),
+                        Text(
+                          'Começar agora',
+                          style: TextStyle(color: Colors.white70),
+                        ),
                       ],
                     ),
                     Column(
@@ -55,8 +61,7 @@ class Introduction extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                  builder: (context) => Login()),
+                              MaterialPageRoute(builder: (context) => Login()),
                             );
                           },
                           child: const FaIcon(FontAwesomeIcons.angleRight),
@@ -87,7 +92,7 @@ class Introduction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarBookTracker(false, 'Introdução', context),
+      appBar: appBarBookTracker(false, false, 'Introdução', context),
       body: buildBody(context),
     );
   }

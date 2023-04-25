@@ -7,7 +7,7 @@ class Setting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarBookTracker(true, 'Configurações', context)
+      appBar: appBarBookTracker(true, true, 'Configurações', context)
     );
   }
 }

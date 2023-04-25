@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNavigationBarBookTracker extends StatelessWidget {
-  int bottomNavigationIndex = 0;
+  BottomNavigationBarBookTracker({super.key, required this.bottomNavigationIndex});
+
+  int bottomNavigationIndex;
+
   List pages = [
     Constants.ROUTE_HOME,
     Constants.ROUTE_READING,
@@ -13,7 +16,7 @@ class BottomNavigationBarBookTracker extends StatelessWidget {
   ];
 
   void changePage(context, index) {
-    Navigator.pushNamed(context, pages[index]);
+    Navigator.pushReplacementNamed(context, pages[index]);
   }
 
   @override
@@ -23,7 +26,7 @@ class BottomNavigationBarBookTracker extends StatelessWidget {
       child: BottomNavigationBar(
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: const Color(0xffffb914),
+        selectedItemColor: Colors.deepPurpleAccent,
         currentIndex: bottomNavigationIndex,
         // onClick change index
         onTap: (index) {
@@ -36,7 +39,7 @@ class BottomNavigationBarBookTracker extends StatelessWidget {
           BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.house), label: 'Inicio'),
           BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.bookBookmark), label: 'Leituras'),
+              icon: FaIcon(FontAwesomeIcons.bookOpen), label: 'Leituras'),
           BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.solidCompass), label: 'Descobrir'),
           BottomNavigationBarItem(

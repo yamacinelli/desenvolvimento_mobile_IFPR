@@ -1,5 +1,6 @@
 import 'package:aula/constant/constants.dart';
 import 'package:aula/widget/appBar.dart';
+import 'package:aula/widget/gradientBookTracker.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -31,7 +32,7 @@ class LoginState extends State<LoginStateful> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarBookTracker(false, 'Login', context),
+      appBar: appBarBookTracker(false, false, 'Login', context),
       body: buildBody(context),
     );
   }
@@ -60,7 +61,7 @@ class LoginState extends State<LoginStateful> {
                 child: Text(
                   'Insira os detalhes da conta abaixo',
                   style: TextStyle(
-                    color: Colors.white54,
+                    color: Colors.black,
                     fontSize: 15,
                   ),
                 ),
@@ -121,7 +122,7 @@ class LoginState extends State<LoginStateful> {
                 },
                 child: const Text(
                   'Esqueceu sua senha?',
-                  style: TextStyle(color: Colors.white, fontSize: 13),
+                  style: TextStyle(color: Colors.black, fontSize: 13),
                 ),
               ),
             ),
@@ -138,15 +139,22 @@ class LoginState extends State<LoginStateful> {
                     'Não possui conta?',
                     style: TextStyle(
                       fontSize: 13,
-                      color: Colors.white54,
+                      color: Colors.black,
                     ),
+                  ),
+                  Container(
+                    decoration: gradientBookTracker(
+                        startColor: Theme.of(context).colorScheme.secondary,
+                        endColor: Colors.deepPurpleAccent,
+                        startPosition: Alignment.topLeft,
+                        endPosition: Alignment.bottomRight),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       // TODO - Page CreateAccount
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blueAccent,
+                      backgroundColor: Colors.deepPurpleAccent,
                       fixedSize: const Size.fromWidth(100),
                     ),
                     child: const Text(

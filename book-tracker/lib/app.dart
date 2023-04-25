@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:aula/widget/account.dart';
 import 'package:aula/widget/book.dart';
 import 'package:aula/widget/buy.dart';
@@ -30,15 +32,36 @@ class App extends StatelessWidget {
         'settings': (context) => Setting(),
       },
       theme: ThemeData(
-        brightness: Brightness.dark,
         primaryColor: const Color(0xff605E9C),
-        scaffoldBackgroundColor: Colors.indigo,
+        colorScheme: const ColorScheme(
+            brightness: Brightness.light,
+            background: Color(0xfffbf2f0),
+            onBackground: Color(0xfffbf2f0),
+            primary: Colors.black,
+            onPrimary: Colors.black,
+            secondary: Color(0xff061959),
+            onSecondary: Color(0xff061959),
+            error: Colors.redAccent,
+            onError: Colors.redAccent,
+            surface: Colors.black,
+            onSurface: Colors.black,
+        ),
+        scaffoldBackgroundColor: const Color(0xfffbf2f0),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: Color(0xffffb914),
         ),
         fontFamily: 'Poltawski Nowy',
       ),
+      scrollBehavior: MyCustomScrollBehavior(),
       debugShowCheckedModeBanner: false,
     );
   }
+}
+
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }
