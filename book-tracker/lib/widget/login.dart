@@ -1,8 +1,7 @@
 import 'package:aula/constant/constants.dart';
-import 'package:aula/widget/appBar.dart';
 import 'package:aula/widget/gradientBookTracker.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ionicons/ionicons.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -61,7 +60,7 @@ class LoginState extends State<LoginStateful> {
                   'Insira os detalhes da conta abaixo',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 15,
+                    fontSize: 13,
                   ),
                 ),
               ),
@@ -85,9 +84,9 @@ class LoginState extends State<LoginStateful> {
                   labelStyle: const TextStyle(fontSize: 13),
                   suffixIcon: IconButton(
                     icon: hidePassword
-                        ? const FaIcon(FontAwesomeIcons.eye)
-                        : const FaIcon(FontAwesomeIcons.eyeSlash),
-                    iconSize: 15,
+                        ? const Icon(Ionicons.eye_outline)
+                        : const Icon(Ionicons.eye_off_outline),
+                    iconSize: 18,
                     onPressed: () {
                       changeObscurePassword();
                     },
@@ -103,13 +102,15 @@ class LoginState extends State<LoginStateful> {
                   Navigator.pushNamed(context, Constants.ROUTE_HOME);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.amber,
+                  backgroundColor: Theme.of(context).colorScheme.secondary,
                   fixedSize: const Size.fromWidth(300),
                   minimumSize: const Size.fromHeight(50),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
                 ),
                 child: const Text(
                   'Entrar',
-                  style: TextStyle(fontSize: 13, color: Colors.black),
+                  style: TextStyle(fontSize: 13, color: Colors.white),
                 ),
               ),
             ),
@@ -130,7 +131,7 @@ class LoginState extends State<LoginStateful> {
               child: Divider(),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -153,8 +154,10 @@ class LoginState extends State<LoginStateful> {
                       // TODO - Page CreateAccount
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurpleAccent,
+                      backgroundColor: Theme.of(context).colorScheme.primary,
                       fixedSize: const Size.fromWidth(100),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                     ),
                     child: const Text(
                       'Criar',
