@@ -32,7 +32,6 @@ class LoginState extends State<LoginStateful> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarBookTracker(false, false, 'Login', context),
       body: buildBody(context),
     );
   }

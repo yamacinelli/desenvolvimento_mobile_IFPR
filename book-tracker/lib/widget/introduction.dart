@@ -2,6 +2,7 @@ import 'package:aula/constant/constants.dart';
 import 'package:aula/widget/appBar.dart';
 import 'package:aula/widget/login.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Introduction extends StatelessWidget {
@@ -9,70 +10,60 @@ class Introduction extends StatelessWidget {
 
   Expanded buildTopPage(BuildContext context) {
     return Expanded(
-      child: Container(),
+      child: Container(
+        color: Theme.of(context).colorScheme.secondary,
+        child: ClipRRect(
+          child: SvgPicture.asset('lib/assets/images/Student-reading-a-book-V2.svg', width: 300),
+        ),
+      ),
     );
   }
 
   Expanded buildBottomPage(BuildContext context) {
     return Expanded(
-      child: ClipRRect(
-        borderRadius: const BorderRadius.only(topLeft: Radius.circular(150)),
-        child: Container(
-          color: Theme.of(context).colorScheme.secondary,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 50, top: 40, right: 20),
-                child: Text(
-                  'Apresentando nosso novo aplicativo, projetado para ajudá-lo a rastrear e gerenciar facilmente seu progresso de leitura.',
-                  textAlign: TextAlign.end,
-                  style: TextStyle(fontSize: 13, color: Colors.white70),
-                ),
+      child: Container(
+        color: Theme.of(context).colorScheme.secondary,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 30, right: 30),
+              child: Text(
+                'Nunca mais perca o controle de seus livros!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 30, right: 20),
-                child: Text(
-                  'Nunca mais perca o controle de seus livros!',
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 30, right: 30),
+              child: Text(
+                'Apresentando nosso novo aplicativo, projetado para ajudá-lo a rastrear e gerenciar facilmente seu progresso de leitura.',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 13, color: Colors.white70),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 60, right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Column(
-                      children: [
-                        Text(
-                          'Começar agora',
-                          style: TextStyle(color: Colors.white70),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        FloatingActionButton.small(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Login()),
-                            );
-                          },
-                          child: const FaIcon(FontAwesomeIcons.angleRight),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30, right: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FloatingActionButton.small(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Login()),
+                      );
+                    },
+                    child: const FaIcon(FontAwesomeIcons.angleRight),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -92,7 +83,7 @@ class Introduction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarBookTracker(false, false, 'Introdução', context),
+      backgroundColor: Theme.of(context).colorScheme.secondary,
       body: buildBody(context),
     );
   }

@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
       height: 130,
       child: Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10)
+          borderRadius: BorderRadius.circular(10),
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),

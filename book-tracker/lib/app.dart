@@ -52,7 +52,7 @@ class App extends StatelessWidget {
         ),
         fontFamily: 'Poltawski Nowy',
       ),
-      scrollBehavior: MyCustomScrollBehavior(),
+      scrollBehavior: MyCustomScrollBehavior().copyWith(scrollbars: false),
       debugShowCheckedModeBanner: false,
     );
   }
