@@ -63,7 +63,7 @@ class Favorite extends StatelessWidget {
 
   Widget buildBody(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
+      margin: const EdgeInsets.only(left: 10, right: 10),
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(

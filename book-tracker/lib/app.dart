@@ -51,7 +51,7 @@ class App extends StatelessWidget {
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: Color(0xffd67477),
         ),
-        fontFamily: 'Poltawski Nowy',
+        fontFamily: 'Albra Sans Regular',
       ),
       scrollBehavior: MyCustomScrollBehavior().copyWith(scrollbars: false),
       debugShowCheckedModeBanner: false,

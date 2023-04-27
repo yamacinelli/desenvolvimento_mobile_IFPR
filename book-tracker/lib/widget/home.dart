@@ -23,13 +23,13 @@ class Home extends StatelessWidget {
 
   Widget buildBody(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
+      margin: const EdgeInsets.only(left: 10, right: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Olá Yago',
-            style: TextStyle(fontSize: 20),
+            'Boa leitura, Yago',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
           ),
           const Padding(
             padding: EdgeInsets.only(top: 20),
@@ -41,7 +41,7 @@ class Home extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 10),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(

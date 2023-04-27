@@ -23,7 +23,7 @@ class Introduction extends StatelessWidget {
           color: Theme.of(context).colorScheme.primary,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Padding(
                 padding: EdgeInsets.only(left: 30, right: 30),
