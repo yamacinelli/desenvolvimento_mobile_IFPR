@@ -2,17 +2,18 @@ import 'package:aula/widget/bottomNavigationBarState.dart';
 import 'package:aula/widget/home.dart';
 import 'package:flutter/material.dart';
 
+import '../model/book.dart';
 import 'appBar.dart';
 
 class Read extends StatelessWidget {
   const Read({super.key});
 
-  Widget buildActualReading(MapEntry<String, String> map) {
+  Widget buildActualReading(Book book) {
     return Row(
       children: [
         Column(
           children: [
-            Home().buildCard(map.value),   
+            Home().buildCard(book),
           ],
         ),
         const Column(
@@ -59,7 +60,7 @@ class Read extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 20),
-            child: buildActualReading(const MapEntry('image', 'https://m.media-amazon.com/images/I/41MRn6hy8-L._SY344_BO1,204,203,200_QL70_ML2_.jpg')),
+            child: buildActualReading(Book(author: '', name: 'Duna: livro 1', imageUrl: 'https://m.media-amazon.com/images/I/41MRn6hy8-L._SY344_BO1,204,203,200_QL70_ML2_.jpg')),
           ),
         ],
       ),

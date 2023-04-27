@@ -71,13 +71,11 @@ class Introduction extends StatelessWidget {
   }
 
   Widget buildBody(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          buildTopPage(context),
-          buildBottomPage(context),
-        ],
-      ),
+    return Column(
+      children: [
+        buildTopPage(context),
+        buildBottomPage(context),
+      ],
     );
   }
 
