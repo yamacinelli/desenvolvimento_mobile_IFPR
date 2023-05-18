@@ -8,37 +8,6 @@ import 'appBar.dart';
 class Read extends StatelessWidget {
   const Read({super.key});
 
-  Widget buildActualReading(Book book) {
-    return Row(
-      children: [
-        Column(
-          children: [
-            Home().buildCard(book),
-          ],
-        ),
-        const Column(
-          children: [
-            Row(
-              children: [
-                Text('Titulo Livro', style: TextStyle(fontSize: 15)),
-              ],
-            ),
-            Row(
-              children: [
-                Text('Capitulo: 10', style: TextStyle(fontSize: 12)),
-              ],
-            ),
-            Row(
-              children: [
-                Text('Capitulo: 10', style: TextStyle(fontSize: 12)),
-              ],
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
   Widget buildBody(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
@@ -60,7 +29,7 @@ class Read extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 20),
-            child: buildActualReading(Book(author: '', name: 'Duna: livro 1', imageUrl: 'https://m.media-amazon.com/images/I/41MRn6hy8-L._SY344_BO1,204,203,200_QL70_ML2_.jpg')),
+            child: Home().buildCard(Book(author: '', name: 'Duna: livro 1', imageUrl: 'https://m.media-amazon.com/images/I/41MRn6hy8-L._SY344_BO1,204,203,200_QL70_ML2_.jpg')),
           ),
         ],
       ),

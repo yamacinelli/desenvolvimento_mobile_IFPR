@@ -14,20 +14,18 @@ class Home extends StatelessWidget {
   ];
 
   Widget buildCard(Book book) {
-    return SizedBox(
+    return Container(
       width: 90,
       height: 150,
+      margin: const EdgeInsets.only(right: 10),
       child: Column(
         children: [
           SizedBox(
             width: 90,
             height: 130,
             child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
+              elevation: 5.0,
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
                 child: Image.network(book.imageUrl, fit: BoxFit.fill),
               ),
             ),

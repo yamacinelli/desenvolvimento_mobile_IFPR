@@ -29,14 +29,11 @@ class Favorite extends StatelessWidget {
       width: 90,
       height: 130,
       child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
+        elevation: 5.0,
         child: Stack(
           fit: StackFit.expand,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(10),
               child: Image.network(map.value, fit: BoxFit.fill),
             ),
             Align(
@@ -70,7 +67,7 @@ class Favorite extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 buildCard(favorites.elementAt(0)),
                 buildCard(favorites.elementAt(1)),
@@ -78,7 +75,7 @@ class Favorite extends StatelessWidget {
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 buildCard(favorites.elementAt(3)),
                 buildCard(favorites.elementAt(4)),
@@ -86,7 +83,7 @@ class Favorite extends StatelessWidget {
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 buildCard(favorites.elementAt(6)),
                 buildCard(favorites.elementAt(7)),
@@ -94,7 +91,7 @@ class Favorite extends StatelessWidget {
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 buildCard(favorites.elementAt(9)),
                 buildCard(favorites.elementAt(10)),
@@ -102,7 +99,7 @@ class Favorite extends StatelessWidget {
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 buildCard(favorites.elementAt(12)),
                 buildCard(favorites.elementAt(13)),
