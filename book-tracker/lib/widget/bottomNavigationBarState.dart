@@ -21,14 +21,14 @@ class BottomNavigationBarBookTracker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(10),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
+    return ClipRRect(
+        borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(60), topRight: Radius.circular(60)),
         child: BottomNavigationBar(
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedItemColor: Theme.of(context).colorScheme.secondary,
+          unselectedItemColor: Theme.of(context).scaffoldBackgroundColor,
           currentIndex: bottomNavigationIndex,
           // onClick change index
           onTap: (index) {
@@ -49,11 +49,10 @@ class BottomNavigationBarBookTracker extends StatelessWidget {
             BottomNavigationBarItem(
                 icon: Icon(Ionicons.bag_outline), label: 'Comprar'),
           ],
-          backgroundColor: Theme.of(context).colorScheme.background,
+          backgroundColor: Theme.of(context).colorScheme.primary,
           // Remove shadow from BottomNavigationBar
           elevation: 0.0,
         ),
-      ),
-    );
+      );
   }
 }
