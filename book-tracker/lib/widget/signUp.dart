@@ -1,3 +1,4 @@
+import 'package:aula/widget/appBar.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
@@ -119,6 +120,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: appBarBookTracker(true, false, '', context),
       body: _buildBody(context),
     );
   }
