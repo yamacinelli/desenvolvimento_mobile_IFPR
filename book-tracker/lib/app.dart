@@ -10,6 +10,7 @@ import 'package:aula/widget/introduction.dart';
 import 'package:aula/widget/login.dart';
 import 'package:aula/widget/read.dart';
 import 'package:aula/widget/setting.dart';
+import 'package:aula/widget/signUp.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -30,6 +31,7 @@ class App extends StatelessWidget {
         'reading': (context) => Read(),
         'discover': (context) => Discover(),
         'settings': (context) => Setting(),
+        'signup': (context) => SignUp(),
       },
       theme: ThemeData(
         colorScheme: const ColorScheme(

@@ -14,7 +14,7 @@ class Favorite extends StatefulWidget {
 
 class _FavoriteState extends State<Favorite> {
 
-  Widget buildCard(Book book, int index) {
+  Widget _buildCard(Book book, int index) {
     return SizedBox(
       width: 90,
       height: 130,
@@ -53,7 +53,7 @@ class _FavoriteState extends State<Favorite> {
 
   List<Widget> _buildChildrenList(BuildContext context, List<Book> books) {
     return List<Widget>.generate(books.length, (index) {
-      return buildCard(books.elementAt(index), index);
+      return _buildCard(books.elementAt(index), index);
     });
   }
 

@@ -9,4 +9,5 @@ class Constants {
   static const ROUTE_READING = 'reading';
   static const ROUTE_DISCOVER = 'discover';
   static const ROUTE_SETTINGS = 'settings';
+  static const ROUTE_SIGNUP = 'signup';
 }

@@ -1,3 +1,4 @@
+import 'package:aula/constant/constants.dart';
 import 'package:aula/widget/login.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
@@ -51,10 +52,7 @@ class Introduction extends StatelessWidget {
                   children: [
                     FloatingActionButton.small(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Login()),
-                        );
+                        Navigator.pushReplacementNamed(context, Constants.ROUTE_LOGIN);
                       },
                       backgroundColor:
                           Theme.of(context).scaffoldBackgroundColor,

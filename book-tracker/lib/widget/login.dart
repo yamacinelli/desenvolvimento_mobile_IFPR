@@ -99,7 +99,7 @@ class LoginState extends State<LoginStateful> {
               padding: const EdgeInsets.only(top: 40),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, Constants.ROUTE_HOME);
+                  Navigator.pushReplacementNamed(context, Constants.ROUTE_HOME);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.secondary,
@@ -151,7 +151,7 @@ class LoginState extends State<LoginStateful> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      // TODO - Page CreateAccount
+                      Navigator.pushNamed(context, Constants.ROUTE_SIGNUP);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).colorScheme.primary,
