@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Book extends StatelessWidget {
+class Book extends StatefulWidget {
   const Book({super.key});
 
   @override
-  Widget build(BuildContext) {
+  State<Book> createState() => _BookState();
+}
+
+class _BookState extends State<Book> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Book: name-book'),
