@@ -13,12 +13,12 @@ class Connection {
       _database = await openDatabase(
           path,
           version: 1,
-          onCreate: (_database, version) {
+          onCreate: (Database database, int version) {
             // Create table book
-            _database.execute(createFavorite);
+            database.execute(createFavorite);
 
             // Run insert's into book table
-            insertBook.forEach(_database.execute);
+            insertFavorite.forEach(database.execute);
         },
       );
 

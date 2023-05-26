@@ -9,7 +9,7 @@ const createFavorite = '''
   )
 ''';
 
-const insertBook = [
+const insertFavorite = [
   '''INSERT INTO favorite(name, author, imageUrl)
      VALUES ("Corte de asas e ruína (Vol. 3 Corte de espinhos e rosas – Edição especial)", "Sarah J. Maas", "https://m.media-amazon.com/images/I/71yuikaNMhL.jpg")''',
   '''INSERT INTO favorite(name, author, imageUrl)
