@@ -1,6 +1,7 @@
 class Book {
-  Book({required this.author, required this.name, required this.imageUrl});
+  Book({this.id, required this.author, required this.name, required this.imageUrl});
 
+  int? id;
   String author;
   String name;
   String imageUrl;

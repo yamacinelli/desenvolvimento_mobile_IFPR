@@ -1,10 +1,12 @@
 abstract class GenericDao<T> {
 
-  T save(T model);
+  Future<T> save(T model);
 
-  T update(T model);
+  Future<T> update(T model);
 
   delete(T model);
 
   Future<List<T>> findAll();
+
+  Future<T> findById(int id);
 }

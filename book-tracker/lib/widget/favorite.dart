@@ -57,7 +57,7 @@ class _FavoriteState extends State<Favorite> {
     });
   }
 
-  Widget _buildBody(BuildContext context, List<Book> books) {
+  Container _buildBody(BuildContext context, List<Book> books) {
     return Container(
       margin: const EdgeInsets.only(left: 10, right: 10),
       child: SingleChildScrollView(
@@ -70,10 +70,16 @@ class _FavoriteState extends State<Favorite> {
     );
   }
 
+  Future<List<Book>> _getAllFavorites() async {
+    setState(() {});
+    return await FavoriteDao().findAll();
+  }
+
   Widget _buildListBooks(BuildContext context) {
     return FutureBuilder(
-      future: FavoriteDao().findAll(),
+      future: _getAllFavorites(),
       builder: (context, AsyncSnapshot<List<Book>> books) {
+        if (!books.hasData) return const CircularProgressIndicator();
         return _buildBody(context, books.data!);
       },
     );
