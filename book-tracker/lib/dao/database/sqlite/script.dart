@@ -5,7 +5,7 @@ const createFavorite = '''
     id INTEGER NOT NULL PRIMARY KEY,
     name VARCHAR(200) NOT NULL,
     author VARCHAR(200) NOT NULL,
-    imageUrl VARCHAR(250) NOT NULL,
+    imageUrl VARCHAR(250) NOT NULL
   )
 ''';
 
@@ -15,9 +15,9 @@ const insertFavorite = [
   '''INSERT INTO favorite(name, author, imageUrl)
      VALUES ("Neon Genesis Evangelion Collector's Edition Vol. 02", "", "https://m.media-amazon.com/images/I/51xJXGttg8L._SX355_BO1,204,203,200_.jpg")''',
   '''INSERT INTO favorite(name, author, imageUrl)
-     VALUES ("O morro dos ventos uivantes", "", "O morro dos ventos uivantes")''',
+     VALUES ("Admirável mundo novo", "Aldous Leonard Huxley", "https://m.media-amazon.com/images/P/B00ITZ9XR4.01._SCLZZZZZZZ_SX500_.jpg")''',
   '''INSERT INTO favorite(name, author, imageUrl)
-     VALUES ("O morro dos ventos uivantes", "", "O morro dos ventos uivantes")''',
+     VALUES ("As Chamas do Paraíso - Série A Roda do Tempo – Vol. 5", "Robert Jordan", "https://m.media-amazon.com/images/P/B01J90K6KA.01._SCLZZZZZZZ_SX500_.jpg")''',
   '''INSERT INTO favorite(name, author, imageUrl)
-     VALUES ("O morro dos ventos uivantes", "", "O morro dos ventos uivantes")''',
+     VALUES ("Bórgia (Graphic Novel Volume Único)", "Alejandro Jodorowsky", "https://m.media-amazon.com/images/P/B0C2FYWDLB.01._SCLZZZZZZZ_SX500_.jpg")''',
 ];

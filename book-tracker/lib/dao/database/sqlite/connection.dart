@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'script.dart';
@@ -8,8 +10,9 @@ class Connection {
   
   static Future<Database> create() async {
     if (_closed) {
-      String path = join(await getDatabasesPath(), 'database.db');
-
+      String databasePath = await getDatabasesPath();
+      String path = join(databasePath, 'database.db');
+      deleteDatabase(path);
       _database = await openDatabase(
           path,
           version: 1,
