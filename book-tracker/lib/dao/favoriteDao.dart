@@ -8,8 +8,7 @@ class FavoriteDao implements GenericDao<Book> {
   @override
   delete(Book model) async {
     Database database = await createDatabase();
-    const delete = 'DELETE FROM favorite WHERE id = ?';
-    await database.delete(delete, whereArgs: [model.id]);
+    await database.delete('favorite WHERE id = ?', whereArgs: [model.id]);
   }
 
   @override
