@@ -19,9 +19,11 @@ class Connection {
           onCreate: (Database database, int version) {
             // Create table book
             database.execute(createFavorite);
-
             // Run insert's into book table
             insertFavorite.forEach(database.execute);
+
+            // Create table user
+            database.execute(createUser);
         },
       );
 

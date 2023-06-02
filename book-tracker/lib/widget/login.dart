@@ -1,4 +1,6 @@
 import 'package:aula/constant/constants.dart';
+import 'package:aula/dao/userDao.dart';
+import 'package:aula/model/user.dart';
 import 'package:aula/widget/gradientBookTracker.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
@@ -22,10 +24,17 @@ class LoginStateful extends StatefulWidget {
 class LoginState extends State<LoginStateful> {
   bool hidePassword = true;
 
+  final controllerEmail = TextEditingController();
+  final controllerPassword = TextEditingController();
+
   void changeObscurePassword() {
     setState(() {
       hidePassword = hidePassword ? false : true;
     });
+  }
+
+  Future<User> _getUserByCredentials() async {
+    return await UserDao().findByCredentials(controllerEmail.text, controllerPassword.text);
   }
 
   @override
@@ -68,6 +77,7 @@ class LoginState extends State<LoginStateful> {
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: TextFormField(
+                controller: controllerEmail,
                 decoration: const InputDecoration(
                   labelText: 'E-mail',
                   labelStyle: TextStyle(fontSize: 13),
@@ -79,6 +89,7 @@ class LoginState extends State<LoginStateful> {
               padding: const EdgeInsets.only(top: 20),
               child: TextFormField(
                 obscureText: hidePassword,
+                controller: controllerPassword,
                 decoration: InputDecoration(
                   labelText: 'Senha',
                   labelStyle: const TextStyle(fontSize: 13),

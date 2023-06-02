@@ -21,3 +21,13 @@ const insertFavorite = [
   '''INSERT INTO favorite(name, author, imageUrl)
      VALUES ("Bórgia (Graphic Novel Volume Único)", "Alejandro Jodorowsky", "https://m.media-amazon.com/images/P/B0C2FYWDLB.01._SCLZZZZZZZ_SX500_.jpg")''',
 ];
+
+const createUser = '''
+  CREATE TABLE user(
+    id INTEGER NOT NULL PRIMARY KEY,
+    name VARCHAR(40) NOT NULL,
+    lastName VARCHAR(40) NOT NULL,
+    email VARCHAR(200) NOT NULL,
+    password VARCHAR(200) NOT NULL
+  )
+''';
