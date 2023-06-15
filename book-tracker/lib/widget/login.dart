@@ -22,19 +22,30 @@ class LoginStateful extends StatefulWidget {
 }
 
 class LoginState extends State<LoginStateful> {
-  bool hidePassword = true;
+  bool _hidePassword = true;
+  bool _disabledButton = true;
 
-  final controllerEmail = TextEditingController();
-  final controllerPassword = TextEditingController();
+  final _controllerEmail = TextEditingController();
+  final _controllerPassword = TextEditingController();
 
   void changeObscurePassword() {
     setState(() {
-      hidePassword = hidePassword ? false : true;
+      _hidePassword = _hidePassword ? false : true;
     });
   }
 
+  void _validateForm() {
+    if (_controllerEmail.text.isEmpty || _controllerPassword.text.isEmpty) {
+      _disabledButton = true;
+    } else {
+      _disabledButton = false;
+    }
+    setState(() {});
+  }
+
   Future<User> _getUserByCredentials() async {
-    return await UserDao().findByCredentials(controllerEmail.text, controllerPassword.text);
+    setState(() {});
+    return await UserDao().findByCredentials(_controllerEmail.text, _controllerPassword.text);
   }
 
   @override
@@ -77,24 +88,25 @@ class LoginState extends State<LoginStateful> {
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: TextFormField(
-                controller: controllerEmail,
+                controller: _controllerEmail,
                 decoration: const InputDecoration(
                   labelText: 'E-mail',
                   labelStyle: TextStyle(fontSize: 13),
                   border: UnderlineInputBorder(),
                 ),
+                onChanged: (value) => _validateForm(),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: TextFormField(
-                obscureText: hidePassword,
-                controller: controllerPassword,
+                obscureText: _hidePassword,
+                controller: _controllerPassword,
                 decoration: InputDecoration(
                   labelText: 'Senha',
                   labelStyle: const TextStyle(fontSize: 13),
                   suffixIcon: IconButton(
-                    icon: hidePassword
+                    icon: _hidePassword
                         ? const Icon(Ionicons.eye_outline)
                         : const Icon(Ionicons.eye_off_outline),
                     iconSize: 18,
@@ -104,16 +116,23 @@ class LoginState extends State<LoginStateful> {
                   ),
                   border: const UnderlineInputBorder(),
                 ),
+                onChanged: (value) => _validateForm(),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 40),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, Constants.ROUTE_HOME);
+                  if (_disabledButton) {
+                    return;
+                  } else {
+                    _getUserByCredentials().then((value) {
+                        Navigator.pushReplacementNamed(context, Constants.ROUTE_HOME);
+                    });
+                  }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Theme.of(context).colorScheme.secondary,
+                  backgroundColor: _disabledButton ? Colors.blueGrey : Theme.of(context).colorScheme.secondary,
                   fixedSize: const Size.fromWidth(300),
                   minimumSize: const Size.fromHeight(50),
                   shape: RoundedRectangleBorder(

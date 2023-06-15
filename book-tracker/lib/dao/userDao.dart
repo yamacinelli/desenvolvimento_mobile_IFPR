@@ -52,7 +52,7 @@ class UserDao implements GenericDao<User> {
     if (user.isEmpty) throw Exception('Element not found with this credentials.');
 
     Map<dynamic, dynamic> result  = user.first;
-    return Future.value(convertToDao(result));
+    return convertToDao(result);
   }
 
   User convertToDao(Map<dynamic, dynamic> user) {

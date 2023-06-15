@@ -20,7 +20,7 @@ class _SignUpState extends State<SignUp> {
 
   bool _disabledButton = true;
 
-  void validateForm() {
+  void _validateForm() {
     if (controllerName.text.isEmpty
         || (controllerLastName.text.isEmpty
             || (controllerEmail.text.isEmpty
@@ -77,7 +77,7 @@ class _SignUpState extends State<SignUp> {
                   labelStyle: TextStyle(fontSize: 13),
                   border: UnderlineInputBorder(),
                 ),
-                onChanged: (value) => validateForm(),
+                onChanged: (value) => _validateForm(),
               ),
             ),
             Padding(
@@ -89,7 +89,7 @@ class _SignUpState extends State<SignUp> {
                   labelStyle: TextStyle(fontSize: 13),
                   border: UnderlineInputBorder(),
                 ),
-                onChanged: (value) => validateForm(),
+                onChanged: (value) => _validateForm(),
               ),
             ),
             Padding(
@@ -101,7 +101,7 @@ class _SignUpState extends State<SignUp> {
                   labelStyle: TextStyle(fontSize: 13),
                   border: UnderlineInputBorder(),
                 ),
-                onChanged: (value) => validateForm(),
+                onChanged: (value) => _validateForm(),
               ),
             ),
             Padding(
@@ -114,7 +114,7 @@ class _SignUpState extends State<SignUp> {
                   labelStyle: TextStyle(fontSize: 13),
                   border: UnderlineInputBorder(),
                 ),
-                onChanged: (value) => validateForm(),
+                onChanged: (value) => _validateForm(),
               ),
             ),
             Padding(
@@ -134,7 +134,7 @@ class _SignUpState extends State<SignUp> {
                   }
                   return null;
                 },
-                onChanged: (value) => validateForm(),
+                onChanged: (value) => _validateForm(),
               ),
             ),
             Padding(
